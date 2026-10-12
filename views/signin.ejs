@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include("partials/head") %>
+</head>
+<body>
+  <%- include("partials/nav") %>
+
+  <main class="container container-narrow">
+    <section class="section">
+      <h2 class="section-title">Sign in</h2>
+      <%- include("partials/alert", { type: "notice", message: notice }) %>
+      <%- include("partials/alert", { type: "error", message: error }) %>
+
+      <form class="form" action="/signin" method="POST">
+        <div class="form-field">
+          <label for="user_id">User ID</label>
+          <input type="text" id="user_id" name="user_id" value="<%= values.user_id || '' %>" autocomplete="username" required autofocus />
+        </div>
+        <div class="form-field">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" autocomplete="current-password" required />
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="button">Sign in</button>
+        </div>
+      </form>
+
+      <p class="form-footnote">No account yet? <a href="/signup">Sign up</a></p>
+    </section>
+  </main>
+
+  <%- include("partials/footer") %>
+</body>
+</html>

@@ -1,0 +1,11 @@
+.footer {
+  max-width: 720px;
+  margin: 64px auto 0;
+  padding: 24px 16px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.footer p {
+  margin: 0;
+}

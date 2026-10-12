@@ -1,0 +1,55 @@
+.nav {
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.nav-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 14px 16px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 16px;
+  flex-wrap: wrap;
+}
+
+.nav-title {
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  font-size: 0.9rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+}
+
+.nav-links a:hover,
+.nav-signout:hover {
+  text-decoration: underline;
+}
+
+.nav-user {
+  color: var(--muted);
+}
+
+.nav-links form {
+  margin: 0;
+}
+
+.nav-signout {
+  font: inherit;
+  padding: 0;
+  border: none;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+}

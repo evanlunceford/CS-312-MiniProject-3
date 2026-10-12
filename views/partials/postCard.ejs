@@ -1,0 +1,18 @@
+<article class="post-card">
+  <p class="post-card-category"><%= post.category %></p>
+  <h3 class="post-card-title"><%= post.title %></h3>
+  <p class="post-card-meta">
+    <%= post.creator_name %> &middot; <%= formatDate(post.date_created) %><% if (post.date_updated) { %> &middot; edited<% } %>
+  </p>
+
+  <p class="post-card-body"><%= post.body %></p>
+
+  <% if (isOwner) { %>
+    <div class="post-card-actions">
+      <a href="/posts/<%= post.blog_id %>/edit">Edit</a>
+      <form action="/posts/<%= post.blog_id %>/delete" method="POST" onsubmit="return confirm('Delete this post?');">
+        <button type="submit" class="post-card-delete">Delete</button>
+      </form>
+    </div>
+  <% } %>
+</article>

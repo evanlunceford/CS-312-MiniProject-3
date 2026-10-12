@@ -1,0 +1,3 @@
+<% if (message) { %>
+  <p class="alert alert-<%= type %>" role="<%= type === 'error' ? 'alert' : 'status' %>"><%= message %></p>
+<% } %>

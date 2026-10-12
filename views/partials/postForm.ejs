@@ -1,0 +1,27 @@
+<form class="form" action="<%= formAction %>" method="POST">
+  <div class="form-field">
+    <label for="title">Title</label>
+    <input type="text" id="title" name="title" maxlength="255" value="<%= values.title || '' %>" required />
+  </div>
+
+  <div class="form-field">
+    <label for="category">Category</label>
+    <select id="category" name="category" required>
+      <% categories.forEach(function(cat) { %>
+        <option value="<%= cat %>" <%= values.category === cat ? "selected" : "" %>><%= cat %></option>
+      <% }); %>
+    </select>
+  </div>
+
+  <div class="form-field">
+    <label for="body">Content</label>
+    <textarea id="body" name="body" rows="6" maxlength="10000" required><%= values.body || '' %></textarea>
+  </div>
+
+  <div class="form-actions">
+    <button type="submit" class="button"><%= submitLabel %></button>
+    <% if (typeof cancelHref !== "undefined") { %>
+      <a href="<%= cancelHref %>" class="button button-secondary">Cancel</a>
+    <% } %>
+  </div>
+</form>

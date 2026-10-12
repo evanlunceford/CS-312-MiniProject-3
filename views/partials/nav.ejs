@@ -1,0 +1,17 @@
+<header class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-title">The Blog</a>
+    <nav class="nav-links">
+      <% if (currentUser) { %>
+        <span class="nav-user"><%= currentUser.name %></span>
+        <a href="/account">Account</a>
+        <form action="/signout" method="POST">
+          <button type="submit" class="nav-signout">Sign out</button>
+        </form>
+      <% } else { %>
+        <a href="/signin">Sign in</a>
+        <a href="/signup">Sign up</a>
+      <% } %>
+    </nav>
+  </div>
+</header>

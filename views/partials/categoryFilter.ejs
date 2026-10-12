@@ -1,0 +1,6 @@
+<nav class="category-filter" aria-label="Filter by category">
+  <a href="/" class="<%= activeCategory === '' ? 'active' : '' %>">All</a>
+  <% categories.forEach(function(cat) { %>
+    <a href="/?category=<%= encodeURIComponent(cat) %>" class="<%= activeCategory === cat ? 'active' : '' %>"><%= cat %></a>
+  <% }); %>
+</nav>
